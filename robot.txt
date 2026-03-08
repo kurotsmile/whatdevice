@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://whatdevice.web.app/sitemap.xml
