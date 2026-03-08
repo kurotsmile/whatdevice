@@ -160,14 +160,53 @@ canvas, img.preview, svg {
   main, header { padding: 16px; }
 }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"WhatDevice","description":"Inspect browser, OS, screen, and language details for troubleshooting.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://whatdevice.web.app"}</script>
+<style id="round2-style">
+body.theme-shell::before, body.theme-shell::after {
+  content:"";
+  position:fixed;
+  z-index:-1;
+  width:320px;
+  height:320px;
+  border-radius:58% 42% 65% 35% / 51% 44% 56% 49%;
+  background:linear-gradient(125deg, #007cf022, #00dfd822);
+  filter: blur(1px);
+}
+body.theme-shell::before { top:-90px; right:-90px; }
+body.theme-shell::after { bottom:-110px; left:-110px; }
+.tool-ribbon {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  margin:0 0 12px;
+  border:1px solid color-mix(in srgb, #007cf0 32%, #ffffff);
+  background:linear-gradient(120deg, #007cf014, #00dfd810);
+  border-radius:12px;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.ribbon-ic {
+  width:18px;
+  height:18px;
+  stroke:color-mix(in srgb, #007cf0 65%, #102030);
+  fill:none;
+  stroke-width:1.9;
+}
+header h1 { position: relative; z-index: 1; }
+header .sub { position: relative; z-index: 1; }
+main { position: relative; overflow: visible; }
+button { min-height: 42px; }
+.theme-shell main{position:relative;padding-top:54px}.theme-shell .tool-ribbon{position:absolute;top:-18px;left:16px;right:16px}
+</style>
 </head>
-<body>
+<body class="theme-shell">
   <div class="container">
     <header>
       <h1>Device/Browser Info Inspector</h1>
       <p class="sub">Inspect browser, OS, screen, and language details for troubleshooting.</p>
     </header>
     <main>
+      <div class="tool-ribbon"><svg viewBox="0 0 24 24" class="ribbon-ic"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/></svg><span>Client Diagnostics Panel</span></div>
       <button id="scan">Scan Device</button><div id="info" class="output" style="margin-top:10px"></div>
     </main>
     
