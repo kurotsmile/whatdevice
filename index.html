@@ -1,69 +1,224 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>WhatDevice | Device/Browser Info Inspector</title><meta name="description" content="Inspect browser, OS, screen, and language details for troubleshooting."><meta name="keywords" content="browser info,device inspector,user agent checker"><meta name="author" content="Tran Thien Thanh"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="WhatDevice - Device/Browser Info Inspector"><meta property="og:description" content="Inspect browser, OS, screen, and language details for troubleshooting."><meta property="og:url" content="https://whatdevice.web.app"><meta property="og:image" content="https://whatdevice.web.app/favicon.svg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="WhatDevice - Device/Browser Info Inspector"><meta name="twitter:description" content="Inspect browser, OS, screen, and language details for troubleshooting."><link rel="canonical" href="https://whatdevice.web.app/"><link rel="icon" type="image/svg+xml" href="favicon.svg"><style>:root{--w:1180px;--r:10px;--font:"Segoe UI","Noto Sans",sans-serif;--bg:#f3fbff;--card:#fff;--text:#133149;--muted:#577388;--line:#d1e6f3;--g1:#007bff;--g2:#00c6a7;--shadow:0 10px 24px rgba(17,52,77,.1)}
-*{box-sizing:border-box}
-body{margin:0;color:var(--text);font-family:var(--font);background:var(--bg)}
-.page{max-width:var(--w);margin:0 auto;padding:24px 16px 36px}
-.tool-shell{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
-label{display:block;margin-bottom:6px;font-weight:700}
-input,select,textarea,button{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit}
-textarea{min-height:130px;resize:vertical}
-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;background:linear-gradient(125deg,var(--g1),var(--g2));color:#fff;font-weight:700;cursor:pointer}
-button:hover{filter:brightness(1.05)}
-.btn-ic{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
-.grid{display:grid;gap:12px}
-.grid.two{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.output,.panel{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
-canvas,img.preview,svg{max-width:100%;border-radius:12px;border:1px solid var(--line);background:#fff}
-.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
-.swatch{border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer}
-.swatch div{height:68px}
-.swatch code{display:block;text-align:center;padding:8px;background:#fff}
-.note{color:var(--muted)}
-.site-footer{margin-top:20px;background:#10243a;color:#dce8f8;border:1px solid #1e3e61;border-radius:14px;padding:16px;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.site-footer h3{margin:0 0 8px;color:#fff}
-.site-footer p{margin:5px 0;word-break:break-word}
-.site-footer a{color:#92cfff}
-@media (max-width:720px){.page{padding:14px 10px 24px}.tool-shell{padding:14px}}
-.hero{font-family:ui-monospace,Menlo,Consolas,monospace;background:#0f2238;color:#d5e8ff;border-radius:var(--r);padding:16px}.hero small{color:#99bcdf}.tool-shell{border-radius:10px}</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"WhatDevice","description":"Inspect browser, OS, screen, and language details for troubleshooting.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","url":"https://whatdevice.web.app"}</script></head><body><div class="page"><section class="hero"><div>Device/Browser Info Inspector</div><small>Inspect browser, OS, screen, and language details for troubleshooting.</small></section><section class="tool-shell"><button id="scan">Scan Device</button><div id="info" class="output" style="margin-top:10px"></div></section>
-<footer class="site-footer">
-  <div>
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:tranthienthanh93@gmail.com">tranthienthanh93@gmail.com</a></p>
-    <p>Web: <a href="https://carrotstore.web.app" target="_blank" rel="noopener">carrotstore.web.app</a></p>
-    <p>Phone: <a href="tel:+84978651577">+84978651577</a></p>
-    <p>Tiktok: <a href="https://www.tiktok.com/@kurotsmilethanh" target="_blank" rel="noopener">@kurotsmilethanh</a></p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatDevice | Cyber Hardware Inspector</title>
+  <meta name="description" content="Inspect device, browser, screen, performance, connectivity, and capability signals in a chip-inspired dashboard.">
+  <meta name="keywords" content="browser info, device inspector, hardware checker, user agent checker">
+  <meta name="author" content="Tran Thien Thanh">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WhatDevice | Cyber Hardware Inspector">
+  <meta property="og:description" content="Inspect device, browser, screen, performance, connectivity, and capability signals in a chip-inspired dashboard.">
+  <meta property="og:url" content="https://whatdevice.web.app">
+  <meta property="og:image" content="https://whatdevice.web.app/favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WhatDevice | Cyber Hardware Inspector">
+  <meta name="twitter:description" content="Inspect device, browser, screen, performance, connectivity, and capability signals in a chip-inspired dashboard.">
+  <link rel="canonical" href="https://whatdevice.web.app/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script>(function(s){s.dataset.zone='10707903',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script>(function(s){s.dataset.zone='10708291',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <style>
+    :root{--bg:#07111a;--panel-3:#0a141d;--text:#edf6ff;--muted:#7d99b1;--line:#1b3243;--line-strong:#2b5874;--accent:#5df2c7;--accent-2:#52b8ff;--accent-3:#a6ff7a;--danger:#ff7f7f;--shadow:0 24px 80px rgba(0,0,0,.38);--radius:22px;--max:1320px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--text);font-family:"Chakra Petch",sans-serif;background:radial-gradient(circle at 20% 20%, rgba(82,184,255,.16), transparent 24%),radial-gradient(circle at 80% 0%, rgba(93,242,199,.12), transparent 28%),linear-gradient(180deg,#03080d 0%, #07111a 40%, #040a11 100%);min-height:100vh;overflow-x:hidden}
+    body::before,body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1}
+    body::before{background:linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at center, black 35%, transparent 90%)}
+    body::after{background:linear-gradient(130deg, transparent 0 46%, rgba(93,242,199,.08) 50%, transparent 54%),linear-gradient(320deg, transparent 0 47%, rgba(82,184,255,.08) 50%, transparent 53%);opacity:.5}
+    a{color:var(--accent)} .page{max-width:var(--max);margin:0 auto;padding:28px 18px 44px}
+    .hero{position:relative;overflow:hidden;padding:28px;border:1px solid var(--line-strong);border-radius:30px;background:linear-gradient(135deg, rgba(10,20,29,.95), rgba(14,33,46,.92)),linear-gradient(90deg, rgba(93,242,199,.08), transparent);box-shadow:var(--shadow);display:grid;gap:18px}
+    .hero::before,.hero::after{content:"";position:absolute;border:1px solid rgba(93,242,199,.22);border-radius:18px;inset:16px;pointer-events:none}
+    .hero::after{inset:auto 24px 24px auto;width:160px;height:160px;border-radius:50%;border-color:rgba(82,184,255,.18);filter:blur(2px)}
+    .hero-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+    .eyebrow,.chip-tag,.metric-label,.section-title small,.meta-label{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--muted)}
+    h1{margin:8px 0 10px;font-size:clamp(2rem, 4vw, 4rem);line-height:.95;letter-spacing:.05em;text-transform:uppercase}
+    .hero p{margin:0;max-width:760px;color:#b9cee0;font-size:1.02rem}
+    .hero-grid{display:grid;grid-template-columns:1.45fr .95fr;gap:18px}
+    .hero-panel,.module,.stat-card,.footer-block{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg, rgba(14,27,39,.94), rgba(9,18,28,.96));box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+    .hero-panel{padding:18px;display:grid;gap:12px}
+    .chip-diagram{position:relative;min-height:190px;border-radius:18px;overflow:hidden;background:radial-gradient(circle at center, rgba(93,242,199,.12), transparent 36%),linear-gradient(180deg, rgba(82,184,255,.08), transparent),linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),var(--panel-3);background-size:auto, auto, 24px 24px, 24px 24px, auto;border:1px solid rgba(82,184,255,.18)}
+    .chip-core{position:absolute;inset:50%;transform:translate(-50%, -50%);width:140px;height:140px;border-radius:24px;border:1px solid rgba(93,242,199,.45);background:linear-gradient(180deg, rgba(93,242,199,.15), rgba(82,184,255,.08));box-shadow:0 0 35px rgba(93,242,199,.12), inset 0 0 30px rgba(82,184,255,.12);display:grid;place-items:center;text-transform:uppercase;letter-spacing:.28em;font-size:.95rem}
+    .chip-core::before,.chip-core::after{content:"";position:absolute;inset:10px;border:1px dashed rgba(255,255,255,.14);border-radius:18px}
+    .chip-trace{position:absolute;background:linear-gradient(90deg, transparent, rgba(82,184,255,.8), transparent);opacity:.75}
+    .chip-trace.horizontal{height:2px;width:100%} .chip-trace.vertical{width:2px;height:100%;background:linear-gradient(180deg, transparent, rgba(93,242,199,.8), transparent)}
+    .chip-pins{position:absolute;inset:14px;pointer-events:none} .chip-pins span{position:absolute;width:18px;height:6px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,.06), rgba(82,184,255,.5))}
+    .chip-pins span:nth-child(1){left:8px;top:36px}.chip-pins span:nth-child(2){left:8px;top:76px}.chip-pins span:nth-child(3){left:8px;top:116px}.chip-pins span:nth-child(4){left:8px;top:156px}.chip-pins span:nth-child(5){right:8px;top:36px}.chip-pins span:nth-child(6){right:8px;top:76px}.chip-pins span:nth-child(7){right:8px;top:116px}.chip-pins span:nth-child(8){right:8px;top:156px}
+    .toolbar{display:flex;flex-wrap:wrap;gap:12px}
+    button{appearance:none;border:none;cursor:pointer;color:var(--text);font:inherit}
+    .btn{min-height:48px;padding:12px 16px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg, rgba(93,242,199,.18), rgba(82,184,255,.18));border:1px solid rgba(93,242,199,.24);transition:transform .18s ease, border-color .18s ease, background .18s ease}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(166,255,122,.45);background:linear-gradient(135deg, rgba(93,242,199,.26), rgba(82,184,255,.22))}
+    .btn.secondary{background:rgba(255,255,255,.03);border-color:var(--line-strong);color:#d8e8f6}
+    .btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.8;fill:none;flex:0 0 auto}
+    .hero-stats{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:12px;align-content:start}
+    .stat-card{padding:16px;min-height:108px;position:relative;overflow:hidden}
+    .stat-card::after{content:"";position:absolute;inset:auto -30px -30px auto;width:100px;height:100px;background:radial-gradient(circle, rgba(93,242,199,.16), transparent 70%)}
+    .metric{margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:1.55rem;font-weight:600;word-break:break-word}
+    .main-grid{margin-top:20px;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .left-stack,.right-stack{display:grid;gap:18px}
+    .module{padding:18px;position:relative;overflow:hidden}
+    .module::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(82,184,255,.04), transparent 40%, rgba(93,242,199,.04));pointer-events:none}
+    .section-head{position:relative;display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:14px}
+    .section-title{margin:0;font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase}
+    .summary-grid{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:12px}
+    .summary-card,.data-card,.status-item{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.02)}
+    .summary-card{padding:14px;min-height:112px}
+    .summary-card strong{display:block;margin-top:10px;font-size:1rem;letter-spacing:.04em}
+    .summary-card p{margin:8px 0 0;color:var(--muted);font-size:.95rem}
+    .data-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:12px}
+    .data-card{padding:14px;background:rgba(6,14,21,.66);min-height:88px}
+    .data-card .meta-label{display:block;margin-bottom:8px}
+    .data-value,.timestamp,.json-box,.status-pill,.footer-block code{font-family:"JetBrains Mono",monospace}
+    .data-value{font-size:.96rem;line-height:1.45;word-break:break-word;color:#dcecfb}
+    .status-grid{display:grid;gap:12px}
+    .status-item{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 16px}
+    .status-pill{padding:7px 12px;border-radius:999px;border:1px solid currentColor;font-size:.84rem;text-transform:uppercase;letter-spacing:.12em;white-space:nowrap}
+    .ok{color:var(--accent)} .warn{color:#ffd27d} .bad{color:var(--danger)}
+    .json-box{margin-top:12px;padding:16px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(180deg, rgba(7,17,26,.96), rgba(11,22,31,.98));color:#c9f7e9;font-size:.88rem;line-height:1.55;max-height:360px;overflow:auto;white-space:pre-wrap;word-break:break-word}
+    .timestamp{color:#a8c4db}
+    .legend{display:flex;flex-wrap:wrap;gap:10px} .legend span{border:1px solid var(--line);border-radius:999px;padding:7px 11px;background:rgba(255,255,255,.02);font-size:.85rem;color:#c7d7e6}
+    .site-footer{margin-top:20px;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:16px}
+    .footer-block{padding:18px} .footer-block h3{margin:0 0 12px;text-transform:uppercase;letter-spacing:.12em;font-size:1rem} .footer-block p{margin:8px 0;color:#bfd3e5;word-break:break-word} .footer-block code{color:var(--accent-3)}
+    .scan-line{position:fixed;inset:0;pointer-events:none;background:linear-gradient(180deg, transparent, rgba(93,242,199,.06), transparent);transform:translateY(-100%);animation:scanline 9s linear infinite;opacity:.4;z-index:3}
+    .toast{position:fixed;right:18px;bottom:18px;z-index:4;padding:12px 16px;border-radius:14px;border:1px solid rgba(93,242,199,.35);background:rgba(8,16,24,.92);color:var(--text);font-family:"JetBrains Mono",monospace;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:opacity .18s ease, transform .18s ease;pointer-events:none}
+    .toast.show{opacity:1;transform:translateY(0)}
+    @keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100%)}}
+    @media (max-width:1080px){.hero-grid,.main-grid{grid-template-columns:1fr}}
+    @media (max-width:760px){.page{padding:14px 12px 34px}.hero{padding:18px}.summary-grid,.data-grid,.site-footer,.hero-stats{grid-template-columns:1fr}.toolbar .btn{flex:1 1 calc(50% - 6px)}h1{font-size:2.3rem}.chip-diagram{min-height:160px}}
+  </style>
+</head>
+<body>
+  <div class="scan-line" aria-hidden="true"></div>
+  <div class="page">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="eyebrow">Embedded Diagnostic Console</div>
+          <h1>WhatDevice</h1>
+          <p>Chip-styled browser and hardware inspector for support, QA, and quick environment audits. Collect runtime signals, screen metrics, feature flags, and export a structured device snapshot.</p>
+        </div>
+        <div class="legend"><span>Live Scan</span><span>Structured Export</span><span>Capability Matrix</span></div>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-panel">
+          <div class="chip-tag">Core Bus Visualizer</div>
+          <div class="chip-diagram" aria-hidden="true">
+            <div class="chip-trace horizontal" style="top:32px"></div><div class="chip-trace horizontal" style="top:84px"></div><div class="chip-trace horizontal" style="top:136px"></div>
+            <div class="chip-trace vertical" style="left:22%"></div><div class="chip-trace vertical" style="left:50%"></div><div class="chip-trace vertical" style="left:78%"></div>
+            <div class="chip-core">scan core</div>
+            <div class="chip-pins"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="toolbar">
+            <button class="btn" id="scanBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V4h3M20 7V4h-3M4 17v3h3M20 17v3h-3"></path><rect x="7" y="7" width="10" height="10" rx="2"></rect></svg><span>Rescan Device</span></button>
+            <button class="btn secondary" id="copyBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><rect x="4" y="4" width="11" height="11" rx="2"></rect></svg><span>Copy JSON</span></button>
+            <button class="btn secondary" id="downloadBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M4 21h16"></path></svg><span>Export Report</span></button>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <article class="stat-card"><div class="metric-label">Detected Form Factor</div><div class="metric" id="metricFormFactor">-</div></article>
+          <article class="stat-card"><div class="metric-label">Operating Layer</div><div class="metric" id="metricOs">-</div></article>
+          <article class="stat-card"><div class="metric-label">Browser Engine</div><div class="metric" id="metricBrowser">-</div></article>
+          <article class="stat-card"><div class="metric-label">Last Scan</div><div class="metric timestamp" id="metricTimestamp">-</div></article>
+        </div>
+      </div>
+    </section>
+    <section class="main-grid">
+      <div class="left-stack">
+        <section class="module"><div class="section-head"><h2 class="section-title">System Summary <small>High-level identification</small></h2></div><div class="summary-grid" id="summaryGrid"></div></section>
+        <section class="module"><div class="section-head"><h2 class="section-title">Hardware + Display <small>Screen, CPU, memory, touch, color space</small></h2></div><div class="data-grid" id="hardwareGrid"></div></section>
+        <section class="module"><div class="section-head"><h2 class="section-title">Browser + Locale <small>Identity, language, timezone, platform channels</small></h2></div><div class="data-grid" id="browserGrid"></div></section>
+      </div>
+      <div class="right-stack">
+        <section class="module"><div class="section-head"><h2 class="section-title">Connectivity Status <small>Network and session indicators</small></h2></div><div class="status-grid" id="statusGrid"></div></section>
+        <section class="module"><div class="section-head"><h2 class="section-title">Capability Matrix <small>Feature support flags</small></h2></div><div class="status-grid" id="capabilityGrid"></div></section>
+        <section class="module"><div class="section-head"><h2 class="section-title">Raw Snapshot <small>Structured payload for support tickets</small></h2></div><div id="jsonOutput" class="json-box">Awaiting scan...</div></section>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="footer-block"><h3>Contact Bus</h3><p>Email: <a href="mailto:tranthienthanh93@gmail.com">tranthienthanh93@gmail.com</a></p><p>Web: <a href="https://carrotstore.web.app" target="_blank" rel="noopener">carrotstore.web.app</a></p><p>Phone: <a href="tel:+84978651577">+84978651577</a></p><p>Tiktok: <a href="https://www.tiktok.com/@kurotsmilethanh" target="_blank" rel="noopener">@kurotsmilethanh</a></p></div>
+      <div class="footer-block"><h3>Signal Output</h3><p>Use this page to capture device state before debugging browser issues, responsive layout bugs, or user support incidents.</p><p>Recommended flow: <code>scan -> verify -> export</code></p></div>
+      <div class="footer-block"><h3>Donation</h3><p>PayPal: <a href="https://www.paypal.com/paypalme/kurotsmile" target="_blank" rel="noopener">paypal.me/kurotsmile</a></p><p>Ko-fi: <a href="https://ko-fi.com/T6T210E258" target="_blank" rel="noopener">ko-fi.com/T6T210E258</a></p></div>
+    </footer>
   </div>
-  <div>
-    <h3>Donation</h3>
-    <p>PayPal: <a href="https://www.paypal.com/paypalme/kurotsmile" target="_blank" rel="noopener">https://www.paypal.com/paypalme/kurotsmile</a></p>
-    <p>Buy us a Coffee on Ko-fi: <a href="https://ko-fi.com/T6T210E258" target="_blank" rel="noopener">https://ko-fi.com/T6T210E258</a></p>
-  </div>
-</footer></div><script>function scan(){ const nav=navigator; const s=screen; const rows={'User Agent':nav.userAgent,'Platform':nav.platform,'Language':nav.language,'Cookies Enabled':String(nav.cookieEnabled),'Online':String(nav.onLine),'Hardware Concurrency':String(nav.hardwareConcurrency||'N/A'),'Screen Size':s.width+' x '+s.height,'Viewport':innerWidth+' x '+innerHeight,'Device Pixel Ratio':String(devicePixelRatio)}; document.getElementById('info').innerHTML=Object.entries(rows).map(([k,v])=>'<p><strong>'+k+':</strong> '+v+'</p>').join('');} document.getElementById('scan').onclick=scan; scan();</script><script>(function(){
-  const icons = {
-    make:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
-    download:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>',
-    convert:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h13"/><path d="M13 3l4 4-4 4"/><path d="M20 17H7"/><path d="M11 13l-4 4 4 4"/></svg>',
-    apply:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>',
-    copy:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><rect x="4" y="4" width="11" height="11" rx="2"/></svg>',
-    random:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M16 21h5v-5"/><path d="M4 4l7 7"/></svg>',
-    start:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',
-    scan:'<svg class="btn-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V4h3M20 7V4h-3M4 17v3h3M20 17v3h-3"/><rect x="7" y="7" width="10" height="10" rx="2"/></svg>'
-  };
-  const choose = (txt) => {
-    const t = txt.toLowerCase();
-    if (t.includes('download') || t.includes('save')) return icons.download;
-    if (t.includes('convert')) return icons.convert;
-    if (t.includes('apply') || t.includes('enhance') || t.includes('detect')) return icons.apply;
-    if (t.includes('copy') || t.includes('extract')) return icons.copy;
-    if (t.includes('random')) return icons.random;
-    if (t.includes('start')) return icons.start;
-    if (t.includes('scan')) return icons.scan;
-    if (t.includes('generate') || t.includes('create') || t.includes('build') || t.includes('update')) return icons.make;
-    return icons.make;
-  };
-  document.querySelectorAll('button').forEach((btn) => {
-    const text = btn.textContent.trim();
-    if (!text || btn.dataset.iconized === '1') return;
-    btn.innerHTML = choose(text) + '<span>' + text + '</span>';
-    btn.dataset.iconized = '1';
-  });
-})();</script></body></html>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    function safeValue(value, fallback = "Unavailable") { if (value === undefined || value === null || value === "") return fallback; return String(value); }
+    function boolStatus(value) { return value ? "Supported" : "Unavailable"; }
+    function formatBytes(gigabytes) { return gigabytes ? gigabytes + " GB" : "Unavailable"; }
+    function formatConnection(connection) { if (!connection) return "Unavailable"; const downlink = connection.downlink ? connection.downlink + " Mb/s" : "n/a"; const rtt = connection.rtt ? connection.rtt + " ms" : "n/a"; return [connection.effectiveType || "unknown", "downlink " + downlink, "rtt " + rtt].join(" | "); }
+    function detectOS(ua, platform) { const source = (ua + " " + platform).toLowerCase(); if (source.includes("windows")) return "Windows"; if (source.includes("android")) return "Android"; if (source.includes("iphone") || source.includes("ipad") || source.includes("ipod")) return "iOS"; if (source.includes("mac os") || source.includes("macintosh")) return "macOS"; if (source.includes("linux")) return "Linux"; if (source.includes("cros")) return "ChromeOS"; return "Unknown"; }
+    function detectBrowser(ua) { const source = ua.toLowerCase(); if (source.includes("edg/")) return "Microsoft Edge"; if (source.includes("opr/") || source.includes("opera")) return "Opera"; if (source.includes("firefox/")) return "Firefox"; if (source.includes("samsungbrowser/")) return "Samsung Internet"; if (source.includes("chrome/") && !source.includes("edg/") && !source.includes("opr/")) return "Chrome"; if (source.includes("safari/") && !source.includes("chrome/")) return "Safari"; return "Unknown"; }
+    function detectDeviceType(ua) { const source = ua.toLowerCase(); if (source.includes("tablet") || source.includes("ipad")) return "Tablet"; if (source.includes("mobi") || source.includes("iphone") || source.includes("android")) return "Mobile"; return "Desktop"; }
+    function getColorScheme() { if (!window.matchMedia) return "Unavailable"; if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "Dark"; if (window.matchMedia("(prefers-color-scheme: light)").matches) return "Light"; return "No Preference"; }
+    function getMotionPreference() { if (!window.matchMedia) return "Unavailable"; return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "Reduced" : "Full"; }
+    async function getBatteryInfo() { if (!navigator.getBattery) return { supported: false, charging: null, level: null }; try { const battery = await navigator.getBattery(); return { supported: true, charging: battery.charging, level: Math.round(battery.level * 100) + "%" }; } catch (error) { return { supported: false, charging: null, level: null }; } }
+    function renderDataCards(targetId, items) { $(targetId).innerHTML = items.map((item) => `<article class="data-card"><span class="meta-label">${item.label}</span><div class="data-value">${item.value}</div></article>`).join(""); }
+    function renderStatusCards(targetId, items) { $(targetId).innerHTML = items.map((item) => `<article class="status-item"><div><div class="meta-label">${item.label}</div><div>${item.description}</div></div><span class="status-pill ${item.tone}">${item.value}</span></article>`).join(""); }
+    function renderSummary(items) { $("summaryGrid").innerHTML = items.map((item) => `<article class="summary-card"><span class="meta-label">${item.label}</span><strong>${item.value}</strong><p>${item.description}</p></article>`).join(""); }
+    function showToast(message) { const toast = $("toast"); toast.textContent = message; toast.classList.add("show"); clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove("show"), 1800); }
+    async function buildSnapshot() {
+      const nav = navigator;
+      const connection = nav.connection || nav.mozConnection || nav.webkitConnection || null;
+      const touchPoints = nav.maxTouchPoints || 0;
+      const battery = await getBatteryInfo();
+      const ua = safeValue(nav.userAgent);
+      const platform = safeValue(nav.platform);
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Unavailable";
+      const now = new Date();
+      return {
+        scannedAt: now.toISOString(),
+        identity: { formFactor: detectDeviceType(ua), operatingSystem: detectOS(ua, platform), browser: detectBrowser(ua), platform, vendor: safeValue(nav.vendor), userAgent: ua },
+        display: { screen: safeValue(screen.width) + " x " + safeValue(screen.height), availableScreen: safeValue(screen.availWidth) + " x " + safeValue(screen.availHeight), viewport: safeValue(window.innerWidth) + " x " + safeValue(window.innerHeight), pixelRatio: safeValue(window.devicePixelRatio), colorDepth: safeValue(screen.colorDepth), orientation: safeValue(screen.orientation && screen.orientation.type), colorScheme: getColorScheme() },
+        hardware: { cpuCores: safeValue(nav.hardwareConcurrency), deviceMemory: formatBytes(nav.deviceMemory), touchPoints: safeValue(touchPoints), reducedMotion: getMotionPreference(), battery },
+        locale: { language: safeValue(nav.language), languages: Array.isArray(nav.languages) ? nav.languages.join(", ") : "Unavailable", timezone, cookieEnabled: !!nav.cookieEnabled, doNotTrack: safeValue(nav.doNotTrack), online: !!nav.onLine },
+        network: { connection: formatConnection(connection), effectiveType: safeValue(connection && connection.effectiveType), downlink: safeValue(connection && connection.downlink), rtt: safeValue(connection && connection.rtt), saveData: !!(connection && connection.saveData) },
+        capabilities: { clipboard: !!navigator.clipboard, geolocation: !!navigator.geolocation, serviceWorker: "serviceWorker" in navigator, localStorage: "localStorage" in window, sessionStorage: "sessionStorage" in window, indexedDB: "indexedDB" in window, webGL: !!window.WebGLRenderingContext, webShare: !!navigator.share, bluetooth: !!navigator.bluetooth, mediaDevices: !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) }
+      };
+    }
+    function updateMetrics(snapshot) { $("metricFormFactor").textContent = snapshot.identity.formFactor; $("metricOs").textContent = snapshot.identity.operatingSystem; $("metricBrowser").textContent = snapshot.identity.browser; $("metricTimestamp").textContent = new Date(snapshot.scannedAt).toLocaleString(); }
+    function renderSnapshot(snapshot) {
+      updateMetrics(snapshot);
+      renderSummary([{ label: "User Agent Layer", value: snapshot.identity.browser, description: "Primary browser family inferred from the user agent string." }, { label: "Execution Surface", value: snapshot.identity.operatingSystem, description: "Detected operating system or platform layer." }, { label: "Screen Matrix", value: snapshot.display.screen, description: "Native screen resolution reported by the device." }]);
+      renderDataCards("hardwareGrid", [{ label: "Screen Resolution", value: snapshot.display.screen }, { label: "Available Screen", value: snapshot.display.availableScreen }, { label: "Viewport", value: snapshot.display.viewport }, { label: "Pixel Ratio", value: snapshot.display.pixelRatio }, { label: "CPU Threads", value: snapshot.hardware.cpuCores }, { label: "Device Memory", value: snapshot.hardware.deviceMemory }, { label: "Touch Points", value: snapshot.hardware.touchPoints }, { label: "Color Depth / Theme", value: snapshot.display.colorDepth + " bit | " + snapshot.display.colorScheme }]);
+      renderDataCards("browserGrid", [{ label: "Platform", value: snapshot.identity.platform }, { label: "Vendor", value: snapshot.identity.vendor }, { label: "Language", value: snapshot.locale.language }, { label: "Language Stack", value: snapshot.locale.languages }, { label: "Timezone", value: snapshot.locale.timezone }, { label: "Do Not Track", value: snapshot.locale.doNotTrack }, { label: "Orientation", value: snapshot.display.orientation }, { label: "User Agent", value: snapshot.identity.userAgent }]);
+      renderStatusCards("statusGrid", [{ label: "Session Link", description: "Browser online state.", value: snapshot.locale.online ? "Online" : "Offline", tone: snapshot.locale.online ? "ok" : "bad" }, { label: "Cookie Engine", description: "Cookie availability for session persistence.", value: snapshot.locale.cookieEnabled ? "Enabled" : "Blocked", tone: snapshot.locale.cookieEnabled ? "ok" : "warn" }, { label: "Network Bus", description: snapshot.network.connection, value: snapshot.network.effectiveType, tone: snapshot.network.effectiveType === "Unavailable" ? "warn" : "ok" }, { label: "Battery State", description: snapshot.hardware.battery.supported ? "Level " + snapshot.hardware.battery.level : "Battery API not exposed.", value: snapshot.hardware.battery.supported ? (snapshot.hardware.battery.charging ? "Charging" : "Discharging") : "Hidden", tone: snapshot.hardware.battery.supported ? "ok" : "warn" }]);
+      renderStatusCards("capabilityGrid", [{ label: "Clipboard", description: "Programmatic copy/read pathways.", value: boolStatus(snapshot.capabilities.clipboard), tone: snapshot.capabilities.clipboard ? "ok" : "warn" }, { label: "Geolocation", description: "Location acquisition API.", value: boolStatus(snapshot.capabilities.geolocation), tone: snapshot.capabilities.geolocation ? "ok" : "warn" }, { label: "Service Worker", description: "Offline caching and background runtime.", value: boolStatus(snapshot.capabilities.serviceWorker), tone: snapshot.capabilities.serviceWorker ? "ok" : "warn" }, { label: "Local Storage", description: "Persistent browser key-value store.", value: boolStatus(snapshot.capabilities.localStorage), tone: snapshot.capabilities.localStorage ? "ok" : "warn" }, { label: "IndexedDB", description: "Client-side structured database.", value: boolStatus(snapshot.capabilities.indexedDB), tone: snapshot.capabilities.indexedDB ? "ok" : "warn" }, { label: "Media Devices", description: "Microphone and camera API availability.", value: boolStatus(snapshot.capabilities.mediaDevices), tone: snapshot.capabilities.mediaDevices ? "ok" : "warn" }, { label: "WebGL", description: "GPU-backed browser rendering context.", value: boolStatus(snapshot.capabilities.webGL), tone: snapshot.capabilities.webGL ? "ok" : "warn" }, { label: "Bluetooth / Share", description: "Peripheral and native share hooks.", value: (snapshot.capabilities.bluetooth ? "BT " : "No BT ") + "| " + (snapshot.capabilities.webShare ? "Share" : "No Share"), tone: snapshot.capabilities.bluetooth || snapshot.capabilities.webShare ? "ok" : "warn" }]);
+      $("jsonOutput").textContent = JSON.stringify(snapshot, null, 2);
+      window.latestSnapshot = snapshot;
+    }
+    async function scanDevice() { $("metricTimestamp").textContent = "Scanning..."; try { const snapshot = await buildSnapshot(); renderSnapshot(snapshot); showToast("Scan completed"); } catch (error) { $("jsonOutput").textContent = "Scan failed: " + error.message; showToast("Scan failed"); } }
+    async function copySnapshot() {
+      if (!window.latestSnapshot) return showToast("No snapshot to copy");
+      const payload = JSON.stringify(window.latestSnapshot, null, 2);
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(payload); }
+        else { const area = document.createElement("textarea"); area.value = payload; document.body.appendChild(area); area.select(); document.execCommand("copy"); area.remove(); }
+        showToast("JSON copied");
+      } catch (error) { showToast("Copy blocked"); }
+    }
+    function downloadSnapshot() {
+      if (!window.latestSnapshot) return showToast("No snapshot to export");
+      const blob = new Blob([JSON.stringify(window.latestSnapshot, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+      link.href = url;
+      link.download = "whatdevice-report-" + stamp + ".json";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      showToast("Report exported");
+    }
+    $("scanBtn").addEventListener("click", scanDevice);
+    $("copyBtn").addEventListener("click", copySnapshot);
+    $("downloadBtn").addEventListener("click", downloadSnapshot);
+    scanDevice();
+  </script>
+</body>
+</html>

@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d6efd"/><stop offset="1" stop-color="#1ba19b"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(#g)"/><text x="50%" y="56%" text-anchor="middle" font-size="25" font-family="Arial" fill="#fff">WH</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="WhatDevice favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111a"/>
+      <stop offset="1" stop-color="#123248"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5df2c7"/>
+      <stop offset="1" stop-color="#52b8ff"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#163444"/>
+      <stop offset="1" stop-color="#0b1a25"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <path d="M12 18h8M44 18h8M12 46h8M44 46h8M18 12v8M18 44v8M46 12v8M46 44v8" stroke="url(#trace)" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="15" y="15" width="34" height="34" rx="10" fill="none" stroke="#214459" stroke-width="1.6"/>
+  <rect x="21" y="21" width="22" height="22" rx="5" fill="url(#core)" stroke="url(#trace)" stroke-width="2"/>
+
+  <path d="M10 22h7M10 32h7M10 42h7M47 22h7M47 32h7M47 42h7" stroke="#8be8d0" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M22 10v7M32 10v7M42 10v7M22 47v7M32 47v7M42 47v7" stroke="#6acbff" stroke-width="2.4" stroke-linecap="round"/>
+
+  <path d="M25 31.5V27h4.5M39 32.5V37h-4.5M29 35l6-6" fill="none" stroke="#eefcff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="14" fill="none" stroke="#5df2c7" stroke-opacity=".18"/>
+</svg>
